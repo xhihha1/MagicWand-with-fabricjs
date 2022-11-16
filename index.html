@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+  <script src="fabric.js"></script>
+  <script src="MagicWand.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <canvas id="c" width="800" height="600"></canvas>
+  <!-- built files will be auto injected -->
+</body>
+<script>
+  var canvas = new fabric.Canvas('c');
+  canvas.backgroundColor = 'yellow';
+
+  fabric.Image.fromURL('a.jpg', function (myImg) {
+    //i create an extra var for to change some image properties
+    var img1 = myImg.set({
+      left: 0,
+      top: 0,
+      // width: 150,
+      // height: 150
+      scaleX: 0.28,
+      scaleY: 0.28
+    });
+    canvas.add(img1);
+  });
+
+  canvas.on('mouse:down', function (event) {
+    if (canvas.getActiveObject()) {
+      // alert(event.target);
+    }
+
+  })
+</script>
+
+</html>
